@@ -12,20 +12,26 @@
 </head>
 
 <body>
+    {{request.path}}
     <div class="container-md">
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="#">Youbike 2.0</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        <a class="nav-link" href="#">Features</a>
-                        <a class="nav-link" href="#">Pricing</a>
-                        <a class="nav-link disabled">Disabled</a>
+
+                        {% for link, link_str in [("/",'Home'), ("/features/",'Features'), ("/pricing",'Pricing'), ("/about/",'About')]%}
+                            {% for link, link_str in}
+                            <a class="nav-link" href="{{link}}">{{link_str}}</a>
+                            {% else %}
+                            <a class="nav-link" href="{{link}}">{{link_str}}</a>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
